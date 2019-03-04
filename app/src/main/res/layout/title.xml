@@ -1,0 +1,24 @@
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:background="@color/colorPrimary"
+    android:layout_height="?attr/actionBarSize"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton
+
+        android:id="@+id/back"
+        android:background="@drawable/setting0"
+        android:src="@drawable/back"
+        android:layout_gravity="center_vertical"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:textColor="@color/colorWhite"
+        android:text="            WeNews"/>
+</LinearLayout>

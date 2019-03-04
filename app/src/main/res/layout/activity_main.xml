@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.thinkpad.wenews.MainActivity">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+  <TextView
+      android:id="@+id/finance"
+      android:layout_weight="1"
+      android:layout_width="0dp"
+      android:text="财经"
+      android:gravity="center_horizontal"
+      android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/movie"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="电影"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/amusement"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="娱乐"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="电视"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/headline"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="头条"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/newsLive"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="News"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <com.yalantis.phoenix.PullToRefreshView
+        android:id="@+id/pull_to_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+</com.yalantis.phoenix.PullToRefreshView>
+</LinearLayout>
