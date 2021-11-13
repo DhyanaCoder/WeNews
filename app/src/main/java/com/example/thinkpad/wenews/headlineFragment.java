@@ -20,10 +20,10 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class headlineFragment extends Fragment {
-    private List<NewItem> newItems=new ArrayList<NewItem>();
+public class headlineFragment extends channelFragment {
+
     private  RecyclerView recyclerView_sports;
-    private  NewsAdapter adapter;
+
 
     public headlineFragment() {
         // Required empty public constructor
@@ -40,17 +40,20 @@ public class headlineFragment extends Fragment {
         recyclerView_sports.setLayoutManager(layoutManager);
         adapter=new NewsAdapter(newItems);
         recyclerView_sports.setAdapter(adapter);
+
       GetNews();
         return view;
     }
-
+@Override
 public void GetNews(){
     if(!MainActivity.progressDialog.isShowing())
         MainActivity.progressDialog.show();
     HttpUtil.sendOkhttpRequest("http://c.3g.163.com/nc/article/list/T1467284926140/0-20.html", new Callback() {
         @Override
         public void onFailure(Call call, IOException e) {
+            e.printStackTrace();
             Log.d("error11","获取错误！！！");
+
         }
 
         @Override
@@ -63,7 +66,8 @@ public void GetNews(){
         }
     });
 }
-    private  void  parseJSONWithJSONObject(String jsonData)
+@Override
+    public   void  parseJSONWithJSONObject(String jsonData)
     {
         try{
             Log.d("hello","hello");

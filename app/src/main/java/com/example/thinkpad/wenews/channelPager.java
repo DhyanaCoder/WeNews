@@ -3,6 +3,7 @@ package com.example.thinkpad.wenews;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -14,7 +15,7 @@ import java.util.List;
  * Created by thinkpad on 2019/3/3.
  */
 
-public class channelPager extends FragmentPagerAdapter {
+public class channelPager extends FragmentStatePagerAdapter {
     List<Fragment> fragmentList=new ArrayList<>();
     MainActivity mContext;
     public  channelPager(FragmentManager fm , List<Fragment> list,MainActivity mContext)

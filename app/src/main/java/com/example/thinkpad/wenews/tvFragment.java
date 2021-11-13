@@ -20,10 +20,10 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class tvFragment extends Fragment {
-    private List<NewItem> newItems=new ArrayList<NewItem>();
+public class tvFragment extends channelFragment {
+
     private  RecyclerView recyclerView_tv;
-    private  NewsAdapter adapter;
+
 
     public tvFragment() {
         // Required empty public constructor
@@ -40,12 +40,13 @@ public class tvFragment extends Fragment {
         recyclerView_tv.setLayoutManager(layoutManager);
         adapter=new NewsAdapter(newItems);
         recyclerView_tv.setAdapter(adapter);
-
+        setAddress("https://3g.163.com/touch/reconstruct/article/list/BD2A86BEwangning/0-20.html");
+        setTypeCode("BD2A86BEwangning");
        GetNews();
         return view;
     }
 
-public void GetNews(){
+/*public void GetNews(){
     if(!MainActivity.progressDialog.isShowing()){
         MainActivity.progressDialog.show();
     }
@@ -70,7 +71,7 @@ public void GetNews(){
         }
     });
 }
-    private  void  parseJSONWithJSONObject(String jsonData)
+   public   void  parseJSONWithJSONObject(String jsonData)
     {
         try{
             Log.d("hello","hello");
@@ -119,5 +120,5 @@ public void GetNews(){
             e.printStackTrace();
 
         }
-    }
+    }*/
 }

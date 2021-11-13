@@ -20,17 +20,9 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class financeFragment extends Fragment {
-    private List<NewItem> newItems=new ArrayList<NewItem>();
+public class financeFragment extends channelFragment{
+
     private  RecyclerView recyclerView_finance;
-    private  NewsAdapter adapter;
-
-    public financeFragment() {
-        // Required empty public constructor
-    }
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -39,16 +31,20 @@ public class financeFragment extends Fragment {
         LinearLayoutManager layoutManager=new LinearLayoutManager(getContext());
         recyclerView_finance.setLayoutManager(layoutManager);
         adapter=new NewsAdapter(newItems);
+        address="https://3g.163.com/touch/reconstruct/article/list/BA8EE5GMwangning/0-20.html";
+        typeCode="BA8EE5GMwangning";
         recyclerView_finance.setAdapter(adapter);
-    GetNews();
+        GetNews();
+        if(!newItems.isEmpty())
+            recyclerView_finance.scrollToPosition(0);
         return view;
     }
 
-public void GetNews(){
+/*public void GetNews(){
     if(!MainActivity.progressDialog.isShowing()){
         MainActivity.progressDialog.show();
     }
-    HttpUtil.sendOkhttpRequest("https://3g.163.com/touch/reconstruct/article/list/BA8EE5GMwangning/0-20.html", new Callback() {
+    HttpUtil.sendOkhttpRequest(address, new Callback() {
         @Override
         public void onFailure(Call call, IOException e) {
             Log.d("error11","获取错误！！！");
@@ -69,7 +65,7 @@ public void GetNews(){
         }
     });
 }
-    private  void  parseJSONWithJSONObject(String jsonData)
+  /*  private  void  parseJSONWithJSONObject(String jsonData)
     {
         try{
             Log.d("hello","hello");
@@ -118,5 +114,5 @@ public void GetNews(){
             e.printStackTrace();
 
         }
-    }
+    }*/
 }

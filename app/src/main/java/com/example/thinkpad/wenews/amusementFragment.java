@@ -22,7 +22,7 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class amusementFragment extends Fragment {
+public class amusementFragment extends channelFragment {
     private List<NewItem> newItems=new ArrayList<NewItem>();
     private  RecyclerView recyclerView_amusement;
     private  NewsAdapter adapter;
@@ -42,6 +42,10 @@ public class amusementFragment extends Fragment {
         recyclerView_amusement.setLayoutManager(layoutManager);
         adapter=new NewsAdapter(newItems);
         recyclerView_amusement.setAdapter(adapter);
+     // setAddress("https://3g.163.com/touch/reconstruct/article/list/BA10TA81wangning/0-20.html");
+        //setTypeCode("BA10TA81wangning");
+     address="https://3g.163.com/touch/reconstruct/article/list/BA10TA81wangning/0-20.html";
+       typeCode="BA10TA81wangning";
 GetNews();
 
         return view;
@@ -49,7 +53,7 @@ GetNews();
 
 
 
-    public void GetNews(){
+ /*public void GetNews(){
     if(!MainActivity.progressDialog.isShowing()){
         MainActivity.progressDialog.show();
     }
@@ -73,8 +77,8 @@ GetNews();
             parseJSONWithJSONObject(text);
         }
     });
-}
-    private  void  parseJSONWithJSONObject(String jsonData)
+}*/
+   public   void  parseJSONWithJSONObject(String jsonData)
     {
         try{
             Log.d("hello","hello");
@@ -124,4 +128,59 @@ GetNews();
 
         }
     }
+ /*public void  parseJSONWithJSONObject(String jsonData)
+ {
+     try{
+         Log.d("hello","hello");
+         JSONObject jsonObject=new JSONObject(jsonData);
+
+         Log.d("testtest",jsonObject.toString());
+         final JSONArray array=jsonObject.getJSONArray(typeCode);
+         for(int i=1;i<array.length();i++)
+         {
+             NewItem one=new NewItem();
+             JSONObject object=array.getJSONObject(i);
+
+             one.setPictureAddress(object.getString("imgsrc"));
+             one.setTitle(object.getString("title"));
+             one.setContentAddress(object.getString("url"));
+             Log.d("contentadress",one.getContentAddress());
+             if(one.getContentAddress().toCharArray()[0]=='0')//对无用的内容地址object进筛选
+             {
+                 Log.d("goodnull","truetrue!+");
+                 continue;
+
+             }
+             Log.d("title12",one.getTitle());
+             Log.d("pic12",one.getPictureAddress());
+             boolean check=false;
+             for(NewItem c:newItems){
+                 if(c.getTitle().equals(one.getTitle())){
+                     check=true;
+                     break;
+                 }}
+             if(!check)
+                 newItems.add(one);
+         }
+
+         Log.d("listsize","1234"+" "+newItems.size());
+         getActivity().runOnUiThread(new Runnable() {
+             @Override
+             public void run() {
+                 Log.d("good!!!!!","showshow!");
+                 if(adapter!=null)
+                     adapter.notifyDataSetChanged();
+                 if(MainActivity.progressDialog.isShowing())
+                     MainActivity.progressDialog.dismiss();
+
+             }
+         });
+     }catch (Exception e)
+     {
+         e.printStackTrace();
+
+     }
+ }*/
+
+
 }

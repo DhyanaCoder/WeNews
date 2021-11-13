@@ -20,10 +20,10 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class armyFragment extends Fragment {
-    private List<NewItem> newItems=new ArrayList<NewItem>();
+public class armyFragment extends channelFragment {
+
     private  RecyclerView recyclerView_army;
-    private  NewsAdapter adapter;
+
 
     public armyFragment() {
         // Required empty public constructor
@@ -40,14 +40,16 @@ public class armyFragment extends Fragment {
         recyclerView_army.setLayoutManager(layoutManager);
         adapter=new NewsAdapter(newItems);
         recyclerView_army.setAdapter(adapter);
+        typeCode="BD2A9LEIwangning";
+        address="https://3g.163.com/touch/reconstruct/article/list/BD2A9LEIwangning/0-20.html";
        GetNews();
         return view;
     }
 
-public void GetNews(){
+/*public void GetNews(){
     if(!MainActivity.progressDialog.isShowing())
         MainActivity.progressDialog.show();
-    HttpUtil.sendOkhttpRequest("https://3g.163.com/touch/reconstruct/article/list/BD2A9LEIwangning/0-20.html", new Callback() {
+    HttpUtil.sendOkhttpRequest(address, new Callback() {
         @Override
         public void onFailure(Call call, IOException e) {
             Log.d("error11","获取错误！！！");
@@ -68,7 +70,7 @@ public void GetNews(){
         }
     });
 }
-    private  void  parseJSONWithJSONObject(String jsonData)
+    /*private  void  parseJSONWithJSONObject(String jsonData)
     {
         try{
             Log.d("hello","hello");
@@ -118,5 +120,5 @@ public void GetNews(){
             e.printStackTrace();
 
         }
-    }
+    }*/
 }

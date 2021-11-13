@@ -11,7 +11,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-  <TextView
+    <TextView
       android:id="@+id/finance"
       android:layout_weight="1"
       android:layout_width="0dp"
@@ -53,15 +53,16 @@
             android:text="News"
             android:gravity="center"
             android:layout_height="wrap_content" />
-    </LinearLayout>
+        </LinearLayout>
     <com.yalantis.phoenix.PullToRefreshView
         android:id="@+id/pull_to_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <android.support.v4.view.ViewPager
+     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center" />
 </com.yalantis.phoenix.PullToRefreshView>
+
 </LinearLayout>
