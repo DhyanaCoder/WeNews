@@ -20,12 +20,12 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class tvFragment extends channelFragment {
+public class InternationalFragment extends channelFragment {
 
     private  RecyclerView recyclerView_tv;
 
 
-    public tvFragment() {
+    public InternationalFragment() {
         // Required empty public constructor
     }
 
@@ -40,9 +40,8 @@ public class tvFragment extends channelFragment {
         recyclerView_tv.setLayoutManager(layoutManager);
         adapter=new NewsAdapter(newItems);
         recyclerView_tv.setAdapter(adapter);
-        setAddress("https://3g.163.com/touch/reconstruct/article/list/BD2A86BEwangning/0-20.html");
-        setTypeCode("BD2A86BEwangning");
-       GetNews();
+        setAddress("https://v.juhe.cn/toutiao/index?type=guoji&key=159fcc069e8f11876501f359679b449f");
+        GetNews();
         return view;
     }
 

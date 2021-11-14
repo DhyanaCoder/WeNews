@@ -42,11 +42,9 @@ public class amusementFragment extends channelFragment {
         recyclerView_amusement.setLayoutManager(layoutManager);
         adapter=new NewsAdapter(newItems);
         recyclerView_amusement.setAdapter(adapter);
-     // setAddress("https://3g.163.com/touch/reconstruct/article/list/BA10TA81wangning/0-20.html");
-        //setTypeCode("BA10TA81wangning");
-     address="https://3g.163.com/touch/reconstruct/article/list/BA10TA81wangning/0-20.html";
-       typeCode="BA10TA81wangning";
-GetNews();
+        address="https://v.juhe.cn/toutiao/index?type=yule&key=159fcc069e8f11876501f359679b449f";
+
+        GetNews();
 
         return view;
     }
@@ -78,56 +76,7 @@ GetNews();
         }
     });
 }*/
-   public   void  parseJSONWithJSONObject(String jsonData)
-    {
-        try{
-            Log.d("hello","hello");
-            JSONObject jsonObject=new JSONObject(jsonData);
 
-            Log.d("testtest",jsonObject.toString());
-            final JSONArray array=jsonObject.getJSONArray("BA10TA81wangning");
-            for(int i=1;i<array.length();i++)
-            {
-                NewItem one=new NewItem();
-                JSONObject object=array.getJSONObject(i);
-
-                one.setPictureAddress(object.getString("imgsrc"));
-                one.setTitle(object.getString("title"));
-                one.setContentAddress(object.getString("url"));
-                Log.d("contentadress",one.getContentAddress());
-                if(one.getContentAddress().toCharArray()[0]=='0')//对无用的内容地址object进筛选
-                {
-                    Log.d("goodnull","truetrue!+");
-                    continue;
-
-                }
-                Log.d("title12",one.getTitle());
-                Log.d("pic12",one.getPictureAddress());
-                boolean check=false;
-                for(NewItem c:newItems){
-                    if(c.getTitle().equals(one.getTitle())){
-                        check=true;
-                    break;
-                }}
-                if(!check)
-                newItems.add(one);
-            }
-
-            Log.d("listsize","1234"+" "+newItems.size());
-           getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    if(MainActivity.progressDialog.isShowing())
-                    MainActivity.progressDialog.dismiss();
-                    adapter.notifyDataSetChanged();
-                }
-            });
-        }catch (Exception e)
-        {
-            e.printStackTrace();
-
-        }
-    }
  /*public void  parseJSONWithJSONObject(String jsonData)
  {
      try{

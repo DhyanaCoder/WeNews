@@ -41,8 +41,8 @@ public class armyFragment extends channelFragment {
         adapter=new NewsAdapter(newItems);
         recyclerView_army.setAdapter(adapter);
         typeCode="BD2A9LEIwangning";
-        address="https://3g.163.com/touch/reconstruct/article/list/BD2A9LEIwangning/0-20.html";
-       GetNews();
+        address="https://v.juhe.cn/toutiao/index?type=junshi&key=159fcc069e8f11876501f359679b449f";
+        GetNews();
         return view;
     }
 

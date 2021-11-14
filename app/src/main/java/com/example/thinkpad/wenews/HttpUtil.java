@@ -12,9 +12,6 @@ import okhttp3.Response;
  */
 
 public class HttpUtil {
-    private String channel="";
-    private final static  String apikey="LzQUsyWYuvT5kNqAAuUuY1pBmhhS37V7";
-
     public static void sendOkhttpRequest(String address,okhttp3.Callback callback){
         //建立RequestBody对象存放待提交的参数，参数有 apikey,text,userid.
         /*RequestBody requestBody=new FormBody.Builder()

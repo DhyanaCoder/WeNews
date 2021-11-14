@@ -31,8 +31,7 @@ public class financeFragment extends channelFragment{
         LinearLayoutManager layoutManager=new LinearLayoutManager(getContext());
         recyclerView_finance.setLayoutManager(layoutManager);
         adapter=new NewsAdapter(newItems);
-        address="https://3g.163.com/touch/reconstruct/article/list/BA8EE5GMwangning/0-20.html";
-        typeCode="BA8EE5GMwangning";
+        address="https://v.juhe.cn/toutiao/index?type=caijing&key=159fcc069e8f11876501f359679b449f";
         recyclerView_finance.setAdapter(adapter);
         GetNews();
         if(!newItems.isEmpty())

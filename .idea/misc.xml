@@ -3,6 +3,13 @@
   <component name="AndroidDexCompilerConfiguration">
     <option name="MAX_HEAP_SIZE" value="512" />
   </component>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidProject/WeNews/app/src/main/res/xml/network_security_config.xml" value="0.11085526315789473" />
+      </map>
+    </option>
+  </component>
   <component name="Kotlin2JsCompilerArguments">
     <option name="sourceMapEmbedSources" />
     <option name="sourceMapPrefix" />
